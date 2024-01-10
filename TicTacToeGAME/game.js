@@ -27,13 +27,7 @@ function handleMove(position) {
              if(gameOver == false) {
 
                 playerTime = (playerTime == 0)? 1:0;
-             if(playerTime == 0){
-             playerTime = 1;
-             }
-
-             else{
-             playerTime = 0;
-             }
+    
          }
      }
      return gameOver;     
@@ -58,4 +52,15 @@ function isWin() {
             }
          } 
          return false;
+}
+
+function restartGame() {
+    playerTime = 0;
+    gameOver = false;
+    board = ['','','','','','','','','',''];
+
+    let squares = document.querySelectorAll(".square");
+    squares.forEach((square) => {
+        square.innerHTML = '';
+    })
 }
